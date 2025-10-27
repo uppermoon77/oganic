@@ -2,6 +2,7 @@ import os
 import re
 import time as pytime
 import requests
+import calendar
 from datetime import datetime, date, timedelta, timezone
 from github import Github, GithubException
 
@@ -26,15 +27,6 @@ EXPIRE_MINUTE_LOCAL = 0
 # Saat expired (global), kita bisa tulis marker ini (opsional)
 SYNC_DISABLED_MARKER = ".SYNC_DISABLED"
 HONOR_MARKER_EVEN_BEFORE_EXPIRY = False  # set True jika ingin hormati marker walau belum expired
-
-# TARGET FILES (contoh Oktober 2025). Silakan ganti sesuai kebutuhan.
-def generate_target_files() -> list[str]:
-    month = "FEBRUARI"
-    year = "2026"
-    prefix = "OA"
-    # DC01OKTOBER2025 ... DC31OKTOBER2025
-    # Catatan: Oktober 2025 punya 28 hari
-    return [f"{prefix}{day:02d}{month}{year}" for day in range(1, 32)]
 
 # ==========================
 # UTIL TANGGAL & WIB
@@ -66,7 +58,7 @@ def parse_date_from_name(name: str) -> date | None:
     """
     name = name.upper()
 
-    # Pola 1: <optional prefix>DD<BULAN_ID>YYYY (contoh: DC21NOVEMBER2025 / 21NOVEMBER2025)
+    # Pola 1
     m = re.search(r'(\d{1,2})(JANUARI|FEBRUARI|MARET|APRIL|MEI|JUNI|JULI|AGUSTUS|SEPTEMBER|OKTOBER|NOVEMBER|DESEMBER)(\d{4})', name, re.IGNORECASE)
     if m:
         dd = int(m.group(1))
@@ -131,7 +123,6 @@ def is_expired_by_name(name: str) -> bool:
 # ==========================
 # FOOTER & TEMPLATE
 # ==========================
-# Buang baris footer yang lama (kalau ada), agar tidak dobel.
 FOOTER_REGEX = r'(?mi)^\s*#EXTM3U\s+billed-msg="[^"]+"\s*$'
 
 def generate_footer(dest_file_path: str, expired: bool) -> str:
@@ -147,10 +138,6 @@ def add_footer(text: str, dest_file_path: str, expired: bool) -> str:
     return f"{cleaned}\n\n{generate_footer(dest_file_path, expired)}\n"
 
 def build_expired_playlist_block() -> str:
-    """
-    Blok 'MASA BERLAKU HABIS' sesuai kebutuhan.
-    (Typo .jpegg diperbaiki ke .jpeg)
-    """
     return (
         '#EXTINF:-1 group-logo="https://i.imgur.com/aVBedkE.jpeg",🔰 MAGELIFE OFFICIAL\n\n'
         '#EXTINF:-1 tvg-id="Iheart80s" tvg-name="Iheart80s" tvg-logo="https://i.imgur.com/CctbVah.jpeg" group-title="🔰 MAGELIFE OFFICIAL", MASA BERLAKU HABIS\n'
@@ -237,6 +224,25 @@ def repo_has_marker(repo) -> bool:
         return False
 
 # ==========================
+# TARGET FILES (dinamis per bulan/tahun)
+# ==========================
+def generate_target_files(
+    month_name: str = "FEBRUARI",
+    year: int = 2026,
+    prefix: str = "OA",
+) -> list[str]:
+    """
+    Menghasilkan OA01<BULAN><TAHUN> ... OA<DD><BULAN><TAHUN> sesuai jumlah hari pada bulan-tahun.
+    """
+    month_name = month_name.upper()
+    if month_name not in ID_MONTHS:
+        raise ValueError(f"Bulan '{month_name}' tidak dikenal. Gunakan salah satu: {', '.join(ID_MONTHS.keys())}")
+
+    month_num = ID_MONTHS[month_name]
+    days_in_month = calendar.monthrange(year, month_num)[1]
+    return [f"{prefix}{day:02d}{month_name}{year}" for day in range(1, days_in_month + 1)]
+
+# ==========================
 # UPDATE FILE PER ITEM
 # ==========================
 def update_single_file(g: Github, dest_file_path: str, base_content_no_footer: str, force_expired: bool | None = None) -> None:
@@ -312,7 +318,7 @@ def main():
         force_expired = None  # auto per-file
 
     # Proses semua file target
-    target_files = generate_target_files()
+    target_files = generate_target_files(month_name="FEBRUARI", year=2026, prefix="OA")
     print(f"\n📁 Daftar file target ({len(target_files)}):")
     print(target_files)
 

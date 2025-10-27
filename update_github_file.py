@@ -33,7 +33,7 @@ def generate_target_files() -> list[str]:
     year = "2026"
     prefix = "OA"
     # DC01OKTOBER2025 ... DC31OKTOBER2025
-    # Catatan: Oktober 2025 punya 31 hari
+    # Catatan: Oktober 2025 punya 28 hari
     return [f"{prefix}{day:02d}{month}{year}" for day in range(1, 32)]
 
 # ==========================

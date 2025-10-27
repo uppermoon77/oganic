@@ -1,4 +1,4 @@
-name: thetoys
+name: oganic
 
 on:
   # jalan otomatis tiap 10 menit (ingat: waktu GitHub = UTC)

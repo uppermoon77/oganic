@@ -7045,13 +7045,10 @@ COVER BARU 2026 https://i.imgur.com/nISWTAB.jpeg
 #EXTVLCOPT:http-referrer=https://github.com/
 https://github.com/cattviptv2605/m3u8-world-/raw/refs/heads/main/tntsport1.m3u8
 
-#EXTINF:-1 tvg-id="TNTSports1.uk" tvg-name="GB : TNT SPORTS 01" tvg-logo="https://i.imgur.com/pm6ULZT.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 0 TNT SPORTS 01
-http://hardcoremedia.xyz:80/fadkjokz/4950078150/258595
-
-#EXTINF:-1  tvg-logo="https://i.imgur.com/pm6ULZT.jpeg" group-title="BOLA | LIGA INGGRIS", LIVE 0 SKYSPORT 2✅
+#EXTINF:-1  tvg-logo="https://i.imgur.com/v788IlS.jpeg" group-title="BOLA | LIGA INGGRIS", LIVE 0 SKYSPORT 2✅
 https://github.com/cattviptv2605/m3u8-world-/raw/refs/heads/main/skysport2_nz.m3u8
 
-#EXTINF:-1 tvg-logo="https://i.imgur.com/pm6ULZT.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 0 SKYSPORT 8✅
+#EXTINF:-1 tvg-logo="https://i.imgur.com/v788IlS.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 0 SKYSPORT 8✅
 https://github.com/cattviptv2605/m3u8-world-/raw/refs/heads/main/skysport8_nz.m3u8
 
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
@@ -7059,7 +7056,7 @@ https://github.com/cattviptv2605/m3u8-world-/raw/refs/heads/main/skysport8_nz.m3
 #EXTVLCOPT--http-reconnect=true
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key={"3dcfbec0e7146928baa55210bf2cb62f":"bc85f74f815d9be5ae1dd6defaa05135"}
-#EXTINF:-1 tvg-logo="https://i.imgur.com/FjKJyFG.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 1 FUBO SPORTS ✅
+#EXTINF:-1 tvg-logo="https://i.imgur.com/v788IlS.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 1 FUBO SPORTS ✅
 https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/uiffe4jhf0/out/v1/3534efafca8c4815adbb4d2e9a1fe003/cenc.mpd
 
 
@@ -7068,14 +7065,14 @@ https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/uiffe4jhf0/
 #EXTVLCOPT--http-reconnect=true
 #KODIPROP:inputstream.adaptive.license_type=org.w3.clearkey
 #KODIPROP:inputstream.adaptive.license_key={dc69b6159a0f9f0a4e03b3ff91cbacd5:d0dcbcd7723bc40df0bf34c9c092d51f}
-#EXTINF:-1 tvg-id="fubosportsnetwork.us" tvg-name="Fubo Sports Network HD" tvg-logo="https://i.imgur.com/FjKJyFG.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 2 FUBO SPORTS 2  ✅
+#EXTINF:-1 tvg-id="fubosportsnetwork.us" tvg-name="Fubo Sports Network HD" tvg-logo="https://i.imgur.com/v788IlS.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 2 FUBO SPORTS 2  ✅
 https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/3b7qwiqzk3/out/v1/9f14895badca43e6a716db021dcd0c31/cenc.mpd
 
-#EXTINF:-1 tvg-logo=https://i.imgur.com/FjKJyFG.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 4 Premier Sports 1✅
+#EXTINF:-1 tvg-logo="https://i.imgur.com/v788IlS.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 4 Premier Sports 1✅
 #EXTVLCOPT:http-referrer=https://profamouslife.com/
 #EXTVLCOPT:http-origin=https://profamouslife.com
 https://d6.merichunidya.com:1686/hls/premieruk.m3u8?md5=vlaG_TZXo_1wyattI7avxw&expires=1765646305
-#EXTINF:-1 tvg-logo="https://i.imgur.com/FjKJyFG.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 4 Premier Sports 2
+#EXTINF:-1 tvg-logo="https://i.imgur.com/nISWTAB.jpeg" group-title="BOLA | LIGA INGGRIS",LIVE 4 Premier Sports 2
 #EXTVLCOPT:http-referrer=https://profamouslife.com/
 #EXTVLCOPT:http-origin=https://profamouslife.com
 
